@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>依田芳乃の時報</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fcefe8 url('https://images.pexels.com/photos/2101187/pexels-photo-2101187.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Yuji Syuku', serif;
+      color: #4a2c2a;
+      text-align: center;
+    }
+    #container {
+      margin: 10% auto;
+      padding: 30px;
+      background: rgba(255, 248, 240, 0.9);
+      border: 3px solid #d4a373;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    #title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #b54e33;
+      font-weight: bold;
+      font-family: 'Yuji Syuku', serif;
+    }
+    #message {
+      margin: 20px 0;
+      font-size: 1.5rem;
+      line-height: 1.8;
+      padding: 15px;
+      background: rgba(255, 235, 230, 0.8);
+      border: 2px solid #d4a373;
+      border-radius: 10px;
+      color: #4a2c2a;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <div id="title">依田芳乃の時報でしてー</div>
+    <div id="message">芳乃からのお知らせが表示されますでしてー！</div>
+  </div>
+
+  <script>
+    const messages = [
+      "今の時刻は{time}でしてー。そうでして、あまりにも静かな時の流れに、芳乃も少し感慨深くなっていますでしてー。",
+      "時はただ流れるものでございますが、その中で新しい出会いや発見も待っているでしてー。現在の時刻は{time}でしてー。",
+      "大切な瞬間をしっかりと感じ取るでしてー。今の時刻は{time}でしてー。",
+      "風に揺れる木々の音を聞きながら、今の時を感じてくださいでしてー。現在は{time}でしてー。",
+      "時間というものは目には見えませぬが、心で刻むものでございますでしてー。今は{time}でしてー。",
+      "少し休んで、また一歩踏み出す力を養うのも良いでしてー。今の時刻は{time}でございますでしてー。",
+      "人々が刻む時の流れの中で、芳乃が皆様のお手伝いをできることが嬉しいでしてー。時刻は{time}でしてー。",
+      "日々の営みの中に美しさを見出すのも大切でしてー。今の時刻は{time}でございますでしてー。",
+      "時を告げるこのひとときが、皆様の心の支えになりますようにでしてー。現在の時刻は{time}でございます。",
+      "時計の針が進むたび、新しい物語が紡がれているでしてー。今は{time}でしてー。",
+      "流れる時間の中で、一瞬一瞬を大切にする心を持ち続けるのが良いでしてー。現在は{time}でございますでしてー。",
+      "時には、ただ静かな時が心を落ち着かせることもあるでしてー。現在は{time}でしてー。",
+      "芳乃と共に時を感じるこの瞬間が、少しでも皆様の力になりますようにでしてー。現在は{time}でしてー。",
+      "時の流れに身を任せ、穏やかな心を持ち続けてくださいでしてー。今は{time}でございますでしてー。",
+      "思いがけないことが起きても、今は冷静に時を感じてくださいでしてー。現在は{time}でしてー。",
+      "時は流れ、今ここに生きていることがありがたいことでございますでしてー。時刻は{time}でしてー。",
+      "芳乃がそばで見守っていることで、安心して次のステップに進んでくださいでしてー。今は{time}でございますでしてー。",
+      "毎日の忙しさの中でも、時には心を静めることが大切でしてー。現在は{time}でしてー。",
+      "今日も一日が始まりましたでしてー。皆様の一日が幸せでありますようにでしてー。今は{time}でございます。",
+      "時の流れがあればこそ、私たちの心も形を成していくのでございますでしてー。時刻は{time}でしてー。",
+      "芳乃と一緒に時を刻んで、今日も一日頑張りましょうでしてー。現在の時刻は{time}でしてー。",
+      "静かなひとときが、芳乃の心を癒してくれるのでございますでしてー。時刻は{time}でしてー。",
+      "芳乃が時を刻みながら、皆様と過ごすことができることに感謝でしてー。現在は{time}でしてー。"
+    ];
+
+    // ランダムなメッセージを選んで表示
+    window.onload = function() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      
+      // ランダムにセリフを選ぶ
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      let selectedMessage = messages[randomIndex];
+
+      // 時刻（分）を表示に組み込む
+      selectedMessage = selectedMessage.replace("{time}", `${hours}時${minutes}分`);
+
+      // メッセージを表示
+      document.getElementById("message").innerText = selectedMessage;
+    };
+  </script>
+</body>
+</html>
